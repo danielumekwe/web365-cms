@@ -1,0 +1,16 @@
+HTTrack3.49-2 launched on Mon, 18 May 2026 04:32:55 at https://frisk-nextapp.vercel.app
+(httrack https://frisk-nextapp.vercel.app -O ./friskclone )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+04:38:45	Error: 	"Not Found" (404) at link https://frisk-nextapp.vercel.app/privacy-policy (from https://frisk-nextapp.vercel.app/)
+04:38:45	Error: 	"Not Found" (404) at link https://frisk-nextapp.vercel.app/terms-conditions (from https://frisk-nextapp.vercel.app/)
+04:38:45	Error: 	"Not Found" (404) at link https://frisk-nextapp.vercel.app/service-details (from https://frisk-nextapp.vercel.app/home-7)
+04:38:45	Error: 	"Not Found" (404) at link https://frisk-nextapp.vercel.app/cart.html (from https://frisk-nextapp.vercel.app/shop)
+04:38:45	Error: 	"Not Found" (404) at link https://frisk-nextapp.vercel.app/blog-details (from https://frisk-nextapp.vercel.app/shop-details/2)
+
+HTTrack Website Copier/3.49-2 mirror complete in 5 minutes 50 seconds : 350 links scanned, 344 files written (17610142 bytes overall) [12261911 bytes received at 35034 bytes/sec], 7211679 bytes transferred using HTTP compression in 203 files, ratio 20%
+(5 errors, 0 warnings, 0 messages)
