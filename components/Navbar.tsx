@@ -28,7 +28,7 @@ export default function Navbar() {
               alt="Web365 Nigeria"
               width={220}
               height={70}
-              className="object-contain"
+              className="object-contain h-14 w-auto"
             />
 
           </Link>
@@ -157,7 +157,7 @@ export default function Navbar() {
           </div>
 
 
-          {/* MOBILE BUTTON */}
+          {/* MOBILE ICON */}
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -183,91 +183,113 @@ export default function Navbar() {
 
         <div className="lg:hidden bg-black border-t border-white/10">
 
-          <div className="px-6 py-8 space-y-6 text-white">
+          <div className="px-6 py-8 text-white">
 
-            <Link href="/">
-              Home
-            </Link>
+            <div className="flex flex-col gap-6">
 
-            <Link href="/about">
-              Who We Are
-            </Link>
-
-
-            <div>
-
-              <button
-                onClick={() => setServiceOpen(!serviceOpen)}
-                className="flex justify-between items-center w-full"
+              <Link
+                href="/"
+                className="block text-lg"
               >
-
-                What We Do
-
-                <ChevronDown
-                  className={`transition ${
-                    serviceOpen
-                      ? "rotate-180"
-                      : ""
-                  }`}
-                />
-
-              </button>
+                Home
+              </Link>
 
 
-              {serviceOpen && (
+              <Link
+                href="/about"
+                className="block text-lg"
+              >
+                Who We Are
+              </Link>
 
-                <div className="pl-5 mt-5 space-y-4 text-gray-300">
 
-                  <Link href="/services/website-development">
-                    Website Development
-                  </Link>
+              <div>
 
-                  <Link href="/services/ecommerce-website">
-                    Ecommerce Website
-                  </Link>
+                <button
+                  onClick={() => setServiceOpen(!serviceOpen)}
+                  className="flex justify-between items-center w-full text-lg"
+                >
 
-                  <Link href="/services/search-engine-optimization">
-                    Search Engine Optimization
-                  </Link>
+                  What We Do
 
-                  <Link href="/services/pay-per-click-management">
-                    PPC Management
-                  </Link>
+                  <ChevronDown
+                    className={`transition ${
+                      serviceOpen
+                        ? "rotate-180"
+                        : ""
+                    }`}
+                  />
 
-                  <Link href="/services/secured-web-hosting">
-                    Secured Web Hosting
-                  </Link>
+                </button>
 
-                  <Link href="/services/software-development">
-                    Software Development
-                  </Link>
 
-                </div>
+                {serviceOpen && (
 
-              )}
+                  <div className="pl-5 mt-5 flex flex-col gap-4 text-gray-300">
+
+                    <Link href="/services/website-development">
+                      Website Development
+                    </Link>
+
+                    <Link href="/services/ecommerce-website">
+                      Ecommerce Website
+                    </Link>
+
+                    <Link href="/services/search-engine-optimization">
+                      Search Engine Optimization
+                    </Link>
+
+                    <Link href="/services/pay-per-click-management">
+                      PPC Management
+                    </Link>
+
+                    <Link href="/services/secured-web-hosting">
+                      Secured Web Hosting
+                    </Link>
+
+                    <Link href="/services/software-development">
+                      Software Development
+                    </Link>
+
+                  </div>
+
+                )}
+
+              </div>
+
+
+              <Link
+                href="/our-work"
+                className="block text-lg"
+              >
+                Our Work
+              </Link>
+
+
+              <Link
+                href="/blog"
+                className="block text-lg"
+              >
+                Blog
+              </Link>
+
+
+              <Link
+                href="/contact"
+                className="block text-lg"
+              >
+                Contact
+              </Link>
+
+
+              <Link
+                href="/contact"
+                className="mt-4 block bg-orange-500 text-center py-5 rounded-full font-bold"
+              >
+                Get Free Quote
+              </Link>
 
             </div>
-
-
-            <Link href="/our-work">
-              Our Work
-            </Link>
-
-            <Link href="/blog">
-              Blog
-            </Link>
-
-            <Link href="/contact">
-              Contact
-            </Link>
-
-
-            <Link
-              href="/contact"
-              className="block bg-orange-500 text-center py-4 rounded-full font-bold"
-            >
-              Get Free Quote
-            </Link>
 
           </div>
 

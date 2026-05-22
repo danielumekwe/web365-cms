@@ -13,14 +13,17 @@ export default function Home() {
   return (
     <>
       <Navbar />
+
       <Hero />
+
       <HomeSections />
-    
-      
-      
+
       <Testimonials />
+
       <BlogSection />
+
       <CTA />
+
       <Footer />
     </>
   );
