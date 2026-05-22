@@ -3,7 +3,7 @@ export default function AboutSections() {
     <>
       {/* HERO */}
 
-      <section className="bg-black py-32 text-white relative overflow-hidden">
+      <section className="bg-black pt-44 pb-32 text-white">
 
         <div className="absolute inset-0 bg-orange-500/10"></div>
 

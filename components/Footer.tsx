@@ -1,111 +1,263 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="bg-black text-white">
-      <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-        <div>
-          <img
-            src="/logo.png"
-            alt="Web365"
-            className="h-14 w-auto object-contain mb-6"
-          />
 
-          <p className="text-gray-300 leading-8 mb-6">
-            Web365 Nigeria helps businesses build professional websites,
-            ecommerce stores, software solutions and digital growth systems.
-          </p>
+      {/* NEWSLETTER */}
 
-          <p className="text-orange-500 font-bold">
-            Build. Grow. Scale Online.
-          </p>
-        </div>
+      <div className="border-b border-white/10 bg-[#111111]">
 
-        <div>
-          <h3 className="text-xl font-black mb-6 text-orange-500">
-            Quick Links
-          </h3>
+        <div className="max-w-7xl mx-auto px-6 py-16">
 
-          <ul className="space-y-4 text-gray-300">
-            <li><Link href="/" className="hover:text-orange-500">Home</Link></li>
-            <li><Link href="/about" className="hover:text-orange-500">About Us</Link></li>
-            <li><Link href="/services" className="hover:text-orange-500">Services</Link></li>
-            <li><Link href="/portfolio" className="hover:text-orange-500">Portfolio</Link></li>
-            <li><Link href="/blog" className="hover:text-orange-500">Blog</Link></li>
-            <li><Link href="/contact" className="hover:text-orange-500">Contact</Link></li>
-          </ul>
-        </div>
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
 
-        <div>
-          <h3 className="text-xl font-black mb-6 text-orange-500">
-            Our Services
-          </h3>
+            <div>
 
-          <ul className="space-y-4 text-gray-300">
-            <li>Website Design</li>
-            <li>Ecommerce Development</li>
-            <li>SEO & Digital Marketing</li>
-            <li>Brand Identity Design</li>
-            <li>Mobile App Development</li>
-            <li>Software / CRM Solutions</li>
-          </ul>
-        </div>
+              <span className="text-orange-500 uppercase tracking-[3px] font-semibold">
+                Newsletter
+              </span>
 
-        <div>
-          <h3 className="text-xl font-black mb-6 text-orange-500">
-            Contact Us
-          </h3>
+              <h2 className="text-4xl md:text-5xl font-black mt-4 mb-6">
+                Subscribe For Digital Insights
+              </h2>
 
-          <div className="space-y-5 text-gray-300">
-            <p>
-              <span className="text-white font-bold">Phone:</span>
-              <br />
-              +2348142746695
-            </p>
+              <p className="text-gray-400 leading-8">
+                Get updates on websites, SEO, ecommerce, hosting and business
+                growth directly in your inbox.
+              </p>
 
-            <p>
-              <span className="text-white font-bold">Email:</span>
-              <br />
-              info@web365ng.com
-            </p>
+            </div>
 
-            <p>
-              <span className="text-white font-bold">Location:</span>
-              <br />
-              Lagos, Nigeria
-            </p>
+
+            <form className="flex flex-col md:flex-row gap-5">
+
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="flex-1 bg-white/5 border border-white/10 rounded-full px-8 py-5 text-white outline-none"
+              />
+
+              <button
+                type="submit"
+                className="bg-orange-500 hover:bg-orange-600 px-10 py-5 rounded-full font-bold"
+              >
+                Subscribe
+              </button>
+
+            </form>
+
           </div>
 
-          <div className="flex gap-4 mt-8">
-            <a href="#" className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center">
-              f
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center">
-              x
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center">
-              in
-            </a>
-          </div>
         </div>
+
       </div>
 
-      <div className="border-t border-white/10 py-6">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-4 text-gray-400 text-sm">
-          <p>
+
+      {/* MAIN FOOTER */}
+
+      <div className="max-w-7xl mx-auto px-6 py-20">
+
+        <div className="grid lg:grid-cols-4 gap-14">
+
+          {/* COMPANY */}
+
+          <div>
+
+            <Image
+              src="/logo.png"
+              alt="Web365 Nigeria"
+              width={220}
+              height={70}
+              className="mb-8"
+            />
+
+            <p className="text-gray-400 leading-8 mb-8">
+              Web365 Nigeria helps businesses build, grow and scale online
+              through websites, ecommerce, SEO, hosting and software solutions.
+            </p>
+
+            <div className="space-y-3 text-gray-300">
+
+              <p>
+                📞 +2348142746695
+              </p>
+
+              <p>
+                ✉️ info@web365ng.com
+              </p>
+
+              <p>
+                📍 Lagos, Nigeria
+              </p>
+
+            </div>
+
+          </div>
+
+
+          {/* WHO WE ARE */}
+
+          <div>
+
+            <h3 className="text-2xl font-black mb-8 text-orange-500">
+              Who We Are
+            </h3>
+
+            <div className="space-y-4 text-gray-300">
+
+              <Link
+                href="/about"
+                className="block hover:text-orange-500"
+              >
+                About Us
+              </Link>
+
+              <Link
+                href="/our-work"
+                className="block hover:text-orange-500"
+              >
+                Our Work
+              </Link>
+
+              <Link
+                href="/blog"
+                className="block hover:text-orange-500"
+              >
+                Blog
+              </Link>
+
+              <Link
+                href="/contact"
+                className="block hover:text-orange-500"
+              >
+                Contact
+              </Link>
+
+            </div>
+
+          </div>
+
+
+          {/* WHAT WE DO */}
+
+          <div>
+
+            <h3 className="text-2xl font-black mb-8 text-orange-500">
+              What We Do
+            </h3>
+
+            <div className="space-y-4 text-gray-300">
+
+              <Link
+                href="/services/website-development"
+                className="block hover:text-orange-500"
+              >
+                Website Development
+              </Link>
+
+              <Link
+                href="/services/ecommerce-website"
+                className="block hover:text-orange-500"
+              >
+                Ecommerce Website
+              </Link>
+
+              <Link
+                href="/services/search-engine-optimization"
+                className="block hover:text-orange-500"
+              >
+                Search Engine Optimization
+              </Link>
+
+              <Link
+                href="/services/pay-per-click-management"
+                className="block hover:text-orange-500"
+              >
+                PPC Management
+              </Link>
+
+              <Link
+                href="/services/software-development"
+                className="block hover:text-orange-500"
+              >
+                Software Development
+              </Link>
+
+              <Link
+                href="/services/secured-web-hosting"
+                className="block hover:text-orange-500"
+              >
+                Secured Web Hosting
+              </Link>
+
+            </div>
+
+          </div>
+
+
+          {/* HOSTING */}
+
+          <div>
+
+            <h3 className="text-2xl font-black mb-8 text-orange-500">
+              Hosting Solutions
+            </h3>
+
+            <p className="text-gray-400 leading-8 mb-8">
+              Need domains, hosting, VPS, SSL certificates and business email?
+              Visit Webcenter Hosting.
+            </p>
+
+            <a
+              href="https://webcenter.ng/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-full font-bold"
+            >
+              Visit Webcenter →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      {/* COPYRIGHT */}
+
+      <div className="border-t border-white/10">
+
+        <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+
+          <p className="text-gray-400">
             © {new Date().getFullYear()} Web365 Nigeria. All Rights Reserved.
           </p>
 
-          <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-orange-500">
+          <div className="flex gap-8 text-gray-400">
+
+            <Link
+              href="/privacy"
+              className="hover:text-orange-500"
+            >
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-orange-500">
-              Terms & Conditions
+
+            <Link
+              href="/terms"
+              className="hover:text-orange-500"
+            >
+              Terms
             </Link>
+
           </div>
+
         </div>
+
       </div>
+
     </footer>
   );
 }

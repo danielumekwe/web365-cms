@@ -19,8 +19,16 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Web365 Nigeria",
-  description: "Web Design & Digital Solutions Company",
+  title: "Web365 Nigeria | Website Design & SEO Company in Nigeria",
+
+  description:
+    "Web365 Nigeria provides website design, ecommerce development, SEO, PPC management, web hosting and software development services.",
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
