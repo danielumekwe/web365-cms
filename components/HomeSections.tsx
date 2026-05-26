@@ -14,31 +14,37 @@ const services = [
     title: "Web Design & Development",
     desc: "Responsive websites, ecommerce solutions and corporate web experiences.",
     icon: "https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/layout-dashboard.svg",
+    href: "/services/website-development",
   },
   {
     title: "Brand Identity & UI/UX",
     desc: "Logo design, brand systems and modern digital experiences.",
     icon: "https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/palette.svg",
+    href: "/services/brand-identity-ui-ux",
   },
   {
     title: "Mobile App Development",
     desc: "Android apps, optimization and business integrations.",
     icon: "https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/device-mobile.svg",
+    href: "/services/mobile-app-development",
   },
   {
     title: "Software / CRM Solutions",
     desc: "ERP systems, custom software and business automation.",
     icon: "https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/settings-cog.svg",
+    href: "/services/software-development",
   },
   {
     title: "SEO & Digital Marketing",
     desc: "SEO, Google Ads and lead generation strategies.",
     icon: "https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/chart-line.svg",
+    href: "/services/search-engine-optimization",
   },
   {
     title: "Training & Capacity Building",
     desc: "Professional digital and technology training.",
     icon: "https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/school.svg",
+    href: "/services/training-capacity-building",
   },
 ];
 

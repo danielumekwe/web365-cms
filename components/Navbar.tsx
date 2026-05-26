@@ -251,6 +251,10 @@ export default function Navbar() {
                       Software Development
                     </Link>
 
+                    <Link href="/services/brand-identity-ui-ux">
+                      UI/UX & Branding
+                    </Link>
+
                   </div>
 
                 )}
