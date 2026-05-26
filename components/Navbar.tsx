@@ -127,7 +127,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="/blog"
+              href="https://blog.web365ng.com/"
               className="hover:text-orange-500 transition"
             >
               Blog
@@ -267,7 +267,7 @@ export default function Navbar() {
 
 
               <Link
-                href="/blog"
+                href="https://blog.web365ng.com/"
                 className="block text-lg"
               >
                 Blog
