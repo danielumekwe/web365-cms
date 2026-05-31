@@ -134,7 +134,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="/contact"
+              href="/request-a-quote/"
               className="hover:text-orange-500 transition"
             >
               Contact
@@ -148,7 +148,7 @@ export default function Navbar() {
           <div className="hidden lg:block">
 
             <Link
-              href="/contact"
+              href="/request-a-quote/"
               className="bg-orange-500 hover:bg-orange-600 text-white px-7 py-4 rounded-full font-bold transition"
             >
               Get Free Quote
@@ -279,7 +279,7 @@ export default function Navbar() {
 
 
               <Link
-                href="/contact"
+                href="/request-a-quote"
                 className="block text-lg"
               >
                 Contact
@@ -287,7 +287,7 @@ export default function Navbar() {
 
 
               <Link
-                href="/contact"
+                href="/request-a-quote"
                 className="mt-4 block bg-orange-500 text-center py-5 rounded-full font-bold"
               >
                 Get Free Quote

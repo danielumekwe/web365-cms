@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function CTA() {
   return (
 
@@ -29,11 +30,13 @@ export default function CTA() {
               help businesses scale.
             </p>
 
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-5 rounded-full font-bold transition duration-300 shadow-lg">
+            <Link href="/request-a-quote/">
+              <button className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-5 rounded-full font-bold transition duration-300 shadow-lg">
 
               Request Free Quote →
 
-            </button>
+              </button>
+            </Link>
 
           </div>
 

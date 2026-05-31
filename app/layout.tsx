@@ -16,7 +16,7 @@ const poppins = Poppins({
     "800",
     "900",
   ],
-  variable: "--font-poppins",
+  variable: "--font-poppins", 
 });
 
 export const metadata: Metadata = {

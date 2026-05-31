@@ -31,12 +31,13 @@ export default function Footer() {
                 className="flex-1 rounded-full border border-white/10 bg-white/5 px-8 py-5 text-white outline-none"
               />
 
-              <button
-                type="submit"
-                className="rounded-full bg-orange-500 px-10 py-5 font-bold hover:bg-orange-600"
-              >
-                Subscribe
-              </button>
+              <Link href="/request-a-quote/">
+  <button
+    className="rounded-full bg-orange-500 px-10 py-5 font-bold hover:bg-orange-600"
+  >
+    Request a Quote
+  </button>
+</Link>
             </form>
           </div>
         </div>
