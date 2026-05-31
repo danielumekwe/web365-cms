@@ -385,27 +385,37 @@ export default function RequestQuotePage() {
                 </div>
 
                 <button
-                  onClick={handleSubmit}
-                  style={{
-                    width: "100%",
-                    padding: "15px 24px",
-                    background: "#f97316",
-                    color: "#fff",
-                    fontSize: "0.95rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.3px",
-                    border: "none",
-                    borderRadius: "8px",
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "10px",
-                    fontFamily: "var(--font-poppins), sans-serif",
-                  }}
-                >
-                  Submit Request <span style={{ fontSize: "1.1rem" }}>→</span>
-                </button>
+  onClick={handleSubmit}
+  disabled={loading}
+  style={{
+    width: "100%",
+    padding: "15px 24px",
+    background: loading ? "#fb923c" : "#f97316",
+    color: "#fff",
+    fontSize: "0.95rem",
+    fontWeight: 700,
+    letterSpacing: "0.3px",
+    border: "none",
+    borderRadius: "8px",
+    cursor: loading ? "not-allowed" : "pointer",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "10px",
+    fontFamily: "var(--font-poppins), sans-serif",
+    opacity: loading ? 0.8 : 1,
+  }}
+>
+  {loading ? (
+    <>
+      Sending Request...
+    </>
+  ) : (
+    <>
+      Submit Request <span style={{ fontSize: "1.1rem" }}>→</span>
+    </>
+  )}
+</button>
               </div>
             )}
           </div>
