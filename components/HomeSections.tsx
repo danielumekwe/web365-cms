@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PortfolioShowcase from "./PortfolioShowcase";
 
 const logos = [
   "/logos/logo1.png",
@@ -174,28 +175,7 @@ export default function HomeSections() {
       </section>
 
       {/* PROJECTS */}
-      <section className="bg-white py-24">
-        <div className="mx-auto max-w-7xl px-6 text-center">
-          <h2 className="mb-6 text-5xl font-black text-orange-500">
-            Recent Projects
-          </h2>
-
-          <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {["Fashion Ecommerce", "Night Club Website", "School Website", "Business Website"].map(
-              (title, index) => (
-                <div key={index}>
-                  <img
-                    src={`/projects/project${index + 1}.jpg`}
-                    alt={title}
-                    className="h-[420px] w-full rounded-xl object-cover"
-                  />
-                  <h3 className="mt-6 text-xl font-bold text-black">{title}</h3>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      </section>
+      <PortfolioShowcase />
 
       {/* CTA */}
       <section

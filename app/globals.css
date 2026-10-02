@@ -41,3 +41,92 @@ body {
 .animate-logo-scroll {
   animation: logo-scroll 25s linear infinite;
 }
+
+/* PORTFOLIO SHOWCASE */
+
+.pf-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.pf-reveal.pf-in {
+  opacity: 1;
+  transform: none;
+}
+
+.pf-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(110px);
+  animation: pf-float 14s ease-in-out infinite;
+}
+
+.pf-blob-b {
+  animation-delay: -7s;
+}
+
+@keyframes pf-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, 40px) scale(1.15); }
+}
+
+.pf-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+.pf-gradient-text {
+  background: linear-gradient(90deg, #f97316, #facc15, #f97316);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: pf-shimmer 4s linear infinite;
+}
+
+@keyframes pf-shimmer {
+  to { background-position: 200% center; }
+}
+
+.pf-shine {
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-20deg);
+}
+
+.pf-card:hover .pf-shine {
+  animation: pf-sweep 0.9s ease;
+}
+
+@keyframes pf-sweep {
+  to { left: 130%; }
+}
+
+.pf-fade {
+  animation: pf-fade-in 0.25s ease;
+}
+
+.pf-pop {
+  animation: pf-pop-in 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes pf-fade-in {
+  from { opacity: 0; }
+}
+
+@keyframes pf-pop-in {
+  from { opacity: 0; transform: scale(0.94) translateY(20px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-reveal { opacity: 1; transform: none; transition: none; }
+  .pf-blob, .pf-gradient-text, .pf-card:hover .pf-shine { animation: none; }
+}

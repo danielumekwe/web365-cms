@@ -1,3 +1,5 @@
+import PortfolioShowcase from "./PortfolioShowcase";
+
 const benefits = [
   "Responsive website design",
   "SEO-friendly structure",
@@ -228,62 +230,12 @@ export default function WebsitePageSections() {
 
       {/* PROJECTS */}
 
-      <section className="bg-[#fff7ed] py-28">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <span className="text-orange-500 uppercase tracking-[3px] font-bold">
-            Website Samples
-          </span>
-
-          <h2 className="text-4xl md:text-6xl font-black text-black mt-5 mb-16">
-            Recent Website Projects
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-10 text-left">
-            {[
-              {
-                title: "Fashion Ecommerce Website",
-                image: "/projects/project1.jpg",
-              },
-              {
-                title: "Night Club Website",
-                image: "/projects/project2.jpg",
-              },
-              {
-                title: "School Website",
-                image: "/projects/project3.jpg",
-              },
-              {
-                title: "Business Website",
-                image: "/projects/project4.jpg",
-              },
-            ].map((project, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-[32px] overflow-hidden shadow-xl"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-[550px] object-cover object-top"
-                />
-
-                <div className="p-8">
-                  <h3 className="text-2xl font-black text-black">
-                    {project.title}
-                  </h3>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <a
-            href="/portfolio"
-            className="inline-block mt-16 bg-orange-500 hover:bg-orange-600 text-white px-10 py-5 rounded-full font-bold"
-          >
-            View More Projects →
-          </a>
-        </div>
-      </section>
+      <PortfolioShowcase
+        heading="Recent Website Projects"
+        limit={4}
+        viewAll
+        bg="bg-[#fff7ed]"
+      />
 
       {/* FAQ */}
 
