@@ -85,6 +85,14 @@ export const allProjects: Project[] = [
     image: "/portfolio/petra-wassaif-camp.jpg",
     accent: "#a0522d",
   },
+  {
+    title: "Seacomida",
+    category: "Food Ecommerce",
+    tag: "Ecommerce",
+    desc: "Ready-to-eat food brand store with a cinematic hero slider and online ordering.",
+    image: "/portfolio/seacomida.jpg",
+    accent: "#d4a959",
+  },
 ];
 
 function useInView<T extends HTMLElement>() {
