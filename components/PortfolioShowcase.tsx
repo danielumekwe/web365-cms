@@ -93,6 +93,14 @@ export const allProjects: Project[] = [
     image: "/portfolio/seacomida.jpg",
     accent: "#d4a959",
   },
+  {
+    title: "Focus on Disability Foundation",
+    category: "NGO Website",
+    tag: "Non-Profit",
+    desc: "Non-profit website empowering people with disabilities across Nigeria, with donations and volunteer sign-up.",
+    image: "/portfolio/fodfoundation.jpg",
+    accent: "#e8793f",
+  },
 ];
 
 function useInView<T extends HTMLElement>() {
