@@ -10,9 +10,20 @@ type Project = {
   desc: string;
   image: string;
   accent: string;
+  /** Case-study page at /portfolio/[slug]; projects without one open in the lightbox. */
+  slug?: string;
 };
 
 export const allProjects: Project[] = [
+  {
+    title: "Justin Carter Engineering",
+    slug: "justin-carter-engineering",
+    category: "Oil & Gas Website",
+    tag: "Corporate",
+    desc: "Offshore and onshore engineering firm site with a cinematic video hero and investor section.",
+    image: "/portfolio/justin-carter.jpg",
+    accent: "#f97316",
+  },
   {
     title: "RNOW Industrial Supply",
     category: "Corporate Website",
@@ -23,6 +34,7 @@ export const allProjects: Project[] = [
   },
   {
     title: "FPC Couture",
+    slug: "fpc-couture",
     category: "Fashion Ecommerce",
     tag: "Ecommerce",
     desc: "Luxury menswear store with worldwide shipping, wishlist and order tracking.",
@@ -31,6 +43,7 @@ export const allProjects: Project[] = [
   },
   {
     title: "Simtek Devices",
+    slug: "simtek-devices",
     category: "Electronics Ecommerce",
     tag: "Ecommerce",
     desc: "Gadget marketplace with category mega-menu, deals and Naira checkout.",
@@ -39,6 +52,7 @@ export const allProjects: Project[] = [
   },
   {
     title: "Brianna Integrated",
+    slug: "brianna-integrated",
     category: "Oil & Gas Website",
     tag: "Corporate",
     desc: "IT solutions and technical support company site for the energy sector.",
@@ -47,6 +61,7 @@ export const allProjects: Project[] = [
   },
   {
     title: "Techron Integrated",
+    slug: "techron-integrated",
     category: "Engineering Website",
     tag: "Corporate",
     desc: "Engineering excellence showcased through a bold animated hero slider.",
@@ -55,6 +70,7 @@ export const allProjects: Project[] = [
   },
   {
     title: "Pearse Energy",
+    slug: "pearse-energy",
     category: "Energy Services Website",
     tag: "Corporate",
     desc: "Engineering, procurement and inspection services for oil & gas clients.",
@@ -63,6 +79,7 @@ export const allProjects: Project[] = [
   },
   {
     title: "GIL Mining",
+    slug: "gil-mining",
     category: "Mining Website",
     tag: "Corporate",
     desc: "Investor-ready website for a trusted name in the mining sector.",
@@ -71,6 +88,7 @@ export const allProjects: Project[] = [
   },
   {
     title: "Cityview Bar & Lodge",
+    slug: "cityview-bar-lodge",
     category: "Hospitality Website",
     tag: "Hospitality",
     desc: "Bar, lodge, nightclub and gym experience with reservations built in.",
@@ -79,6 +97,7 @@ export const allProjects: Project[] = [
   },
   {
     title: "Petra Wassaif Camp",
+    slug: "petra-wassaif-camp",
     category: "Travel & Booking Website",
     tag: "Hospitality",
     desc: "Bedouin camp in Jordan with accommodation, experiences and WhatsApp booking.",
@@ -87,6 +106,7 @@ export const allProjects: Project[] = [
   },
   {
     title: "Seacomida",
+    slug: "seacomida",
     category: "Food Ecommerce",
     tag: "Ecommerce",
     desc: "Ready-to-eat food brand store with a cinematic hero slider and online ordering.",
@@ -95,6 +115,7 @@ export const allProjects: Project[] = [
   },
   {
     title: "Focus on Disability Foundation",
+    slug: "focus-on-disability-foundation",
     category: "NGO Website",
     tag: "Non-Profit",
     desc: "Non-profit website empowering people with disabilities across Nigeria, with donations and volunteer sign-up.",
@@ -137,31 +158,26 @@ function Card({
 }) {
   const [ref, seen] = useInView<HTMLDivElement>();
 
-  const onMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const onMove = (e: React.MouseEvent<HTMLElement>) => {
     const el = e.currentTarget;
     const r = el.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width - 0.5;
     const y = (e.clientY - r.top) / r.height - 0.5;
     el.style.transform = `perspective(1000px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-6px)`;
   };
-  const onLeave = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const onLeave = (e: React.MouseEvent<HTMLElement>) => {
     e.currentTarget.style.transform = "";
   };
 
-  return (
-    <div
-      ref={ref}
-      className={`pf-reveal ${seen ? "pf-in" : ""}`}
-      style={{ transitionDelay: `${(index % 2) * 150}ms` }}
-    >
-      <button
-        onClick={onOpen}
-        onMouseMove={onMove}
-        onMouseLeave={onLeave}
-        className="group block w-full text-left transition-transform duration-300 ease-out"
-        aria-label={`View ${project.title}`}
-      >
-        <div className="relative aspect-[16/11] overflow-hidden rounded-xl shadow-xl">
+  const cardProps = {
+    onMouseMove: onMove,
+    onMouseLeave: onLeave,
+    className: "group block w-full text-left transition-transform duration-300 ease-out",
+  };
+
+  const body = (
+    <>
+      <div className="relative aspect-[16/11] overflow-hidden rounded-xl shadow-xl">
           <img
             src={project.image}
             alt={project.title}
@@ -177,7 +193,29 @@ function Card({
         <h3 className="mt-6 text-center text-xl font-bold text-black transition-colors group-hover:text-orange-500">
           {project.title}
         </h3>
-      </button>
+        {project.slug && (
+          <span className="mt-2 block text-center text-sm font-bold text-orange-500">
+            View Case Study <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+          </span>
+        )}
+    </>
+  );
+
+  return (
+    <div
+      ref={ref}
+      className={`pf-reveal ${seen ? "pf-in" : ""}`}
+      style={{ transitionDelay: `${(index % 2) * 150}ms` }}
+    >
+      {project.slug ? (
+        <Link href={`/portfolio/${project.slug}`} {...cardProps}>
+          {body}
+        </Link>
+      ) : (
+        <button onClick={onOpen} aria-label={`View ${project.title}`} {...cardProps}>
+          {body}
+        </button>
+      )}
     </div>
   );
 }
@@ -194,6 +232,8 @@ export default function PortfolioShowcase({
   bg?: string;
 }) {
   const projects = limit ? allProjects.slice(0, limit) : allProjects;
+  const gallery = projects.filter((p) => !p.slug);
+  const galleryCount = gallery.length;
   const [active, setActive] = useState<number | null>(null);
   const [headRef, headSeen] = useInView<HTMLHeadingElement>();
 
@@ -201,9 +241,9 @@ export default function PortfolioShowcase({
   const step = useCallback(
     (dir: number) =>
       setActive((i) =>
-        i === null ? i : (i + dir + projects.length) % projects.length
+        i === null ? i : (i + dir + galleryCount) % galleryCount
       ),
-    []
+    [galleryCount]
   );
 
   useEffect(() => {
@@ -221,7 +261,7 @@ export default function PortfolioShowcase({
     };
   }, [active, close, step]);
 
-  const current = active !== null ? projects[active] : null;
+  const current = active !== null ? gallery[active] : null;
 
   return (
     <section className={`${bg} py-24`}>
@@ -235,7 +275,7 @@ export default function PortfolioShowcase({
 
         <div className="mt-16 grid gap-12 md:grid-cols-2">
           {projects.map((p, i) => (
-            <Card key={p.title} project={p} index={i} onOpen={() => setActive(i)} />
+            <Card key={p.title} project={p} index={i} onOpen={() => setActive(gallery.indexOf(p))} />
           ))}
         </div>
 
@@ -266,7 +306,7 @@ export default function PortfolioShowcase({
             </div>
             <div className="flex items-center justify-between gap-4 p-5">
               <h3 className="text-xl font-bold">{current.title}</h3>
-              <div className="flex shrink-0 gap-2">
+              <div className={`flex shrink-0 gap-2 ${gallery.length > 1 ? "" : "hidden"}`}>
                 <button
                   onClick={() => step(-1)}
                   className="h-10 w-10 rounded-full border border-white/20 hover:bg-orange-500"

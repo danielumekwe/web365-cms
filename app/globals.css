@@ -126,7 +126,44 @@ body {
   from { opacity: 0; transform: scale(0.94) translateY(20px); }
 }
 
+/* CASE STUDY SCREENSHOTS */
+
+.cs-scroll {
+  --h: 420px;
+  position: relative;
+  height: var(--h);
+  overflow: hidden;
+  background: #111;
+}
+
+.cs-scroll-sm {
+  --h: 300px;
+}
+
+@media (min-width: 1024px) {
+  .cs-scroll-lg { --h: 680px; }
+  .cs-scroll-sm { --h: 288px; }
+}
+
+.cs-scroll img {
+  display: block;
+  width: 100%;
+  transition: transform 7s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+@media (hover: hover) {
+  .cs-scroll:hover img {
+    transform: translateY(calc(-100% + var(--h)));
+  }
+}
+
+@media (hover: none) {
+  .cs-scroll { overflow-y: auto; }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .cs-scroll { overflow-y: auto; }
+  .cs-scroll img, .cs-scroll:hover img { transition: none; transform: none; }
   .pf-reveal { opacity: 1; transform: none; transition: none; }
   .pf-blob, .pf-gradient-text, .pf-card:hover .pf-shine { animation: none; }
 }

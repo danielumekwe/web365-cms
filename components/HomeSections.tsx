@@ -175,7 +175,7 @@ export default function HomeSections() {
       </section>
 
       {/* PROJECTS */}
-      <PortfolioShowcase />
+      <PortfolioShowcase limit={4} viewAll />
 
       {/* CTA */}
       <section

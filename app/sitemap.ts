@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { caseStudies } from "@/data/caseStudies";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://web365ng.com";
@@ -52,5 +53,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/portfolio`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    ...caseStudies.map((c) => ({
+      url: `${baseUrl}/portfolio/${c.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
   ];
 }
