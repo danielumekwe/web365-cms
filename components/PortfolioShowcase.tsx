@@ -122,6 +122,15 @@ export const allProjects: Project[] = [
     image: "/portfolio/fodfoundation.jpg",
     accent: "#e8793f",
   },
+  {
+    title: "Homes9ja",
+    slug: "homes9ja",
+    category: "Shortlet Booking Platform",
+    tag: "Hospitality",
+    desc: "Shortlet and service apartment marketplace for Nigeria with search, instant booking and host listings.",
+    image: "/portfolio/homes9ja.jpg",
+    accent: "#13873b",
+  },
 ];
 
 function useInView<T extends HTMLElement>() {

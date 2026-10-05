@@ -321,6 +321,34 @@ export const caseStudies: CaseStudy[] = [
     stack: ["Next.js"],
     ...shots("focus-on-disability-foundation", ["About Us", "Donate"]),
   },
+  {
+    slug: "homes9ja",
+    title: "Homes9ja",
+    category: "Shortlet Booking Platform",
+    industry: "Travel & Hospitality",
+    location: "Nigeria",
+    url: "https://homes9ja.com/",
+    accent: "#13873b",
+    tagline: "A booking marketplace for shortlets and service apartments across Nigeria.",
+    overview:
+      "Homes9ja helps travellers discover and book fully furnished shortlets and serviced apartments across Nigeria's top cities — Lagos, Abuja, Port Harcourt, Kano, Ibadan and Benin City.",
+    goal:
+      "Make finding a trusted short stay as simple as one search, and give property owners an easy way to list their space and reach guests nationwide.",
+    design: [
+      "The homepage opens with a bright, airy hero over the Lagos skyline and a bold ‘Find Your Perfect Shortlet in Nigeria’ headline, with a booking-style search bar for location, check-in, check-out and guests front and centre.",
+      "A fresh green palette and clean Plus Jakarta Sans typography run through Popular Destinations, Featured Shortlets cards with Naira nightly prices, and a Browse by Shortlet Type section — with List Your Property kept one click away for hosts.",
+    ],
+    features: [
+      { title: "Search & filters", desc: "Search by city and dates, with room type, price range and amenity filters." },
+      { title: "Instant booking", desc: "Request to Book or Instant Book with a clear price breakdown." },
+      { title: "Property listings", desc: "Photo galleries, amenities, house details, reviews and a location map." },
+      { title: "Host onboarding", desc: "List Your Property flow so owners can publish their space." },
+      { title: "Popular destinations", desc: "Quick links to shortlets in Nigeria's top cities." },
+      { title: "Multi-currency", desc: "Naira pricing by default with language and currency switching." },
+    ],
+    stack: ["Laravel"],
+    ...shots("homes9ja", ["Property Listing"]),
+  },
 ];
 
 export const getCaseStudy = (slug: string) => caseStudies.find((c) => c.slug === slug);
